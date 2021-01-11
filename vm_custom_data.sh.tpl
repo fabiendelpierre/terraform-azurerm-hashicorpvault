@@ -14,6 +14,18 @@ apt-get install -y azure-cli
 # Install required system packages
 apt-get install -y jq unzip
 
+# Need to install Node.js for the self-hosted GitHub Actions runner
+curl -sL https://deb.nodesource.com/setup_15.x | bash -
+apt-get install -y nodejs
+
+# Install the GitHub Actions runner
+GITHUB_ACTIONS_HOME="/home/${username}/actions-runner"
+mkdir -p $GITHUB_ACTIONS_HOME
+cd $GITHUB_ACTIONS_HOME
+curl -O -L https://github.com/actions/runner/releases/download/v2.275.1/actions-runner-linux-x64-2.275.1.tar.gz
+tar xzf $GITHUB_ACTIONS_HOME/actions-runner-linux-x64-2.275.1.tar.gz
+cd -
+
 # Clean up
 apt-get autoremove -y
 
