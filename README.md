@@ -1,19 +1,5 @@
 # Terraform code repository
 
-Short description
+Creates an Azure VM using Ubuntu 18.04 LTS and installs an instance of Hashicorp Vault. Also configures various bits and pieces needed for Vault to run and be reachable.
 
-## What this does
-
-Lorem ipsum
-
-## Variables
-
-Lorem ipsum
-
-## Code example
-
-```hcl
-terraform {
-  ...
-}
-```
+See [here](https://github.com/fabiendelpierre/my-azure-msdn-subscription) for how everything is tied together.
