@@ -66,7 +66,7 @@ resource "azurerm_network_security_rule" "inbound_https" {
   direction                                  = "Inbound"
   access                                     = "Allow"
   protocol                                   = "Tcp"
-  source_address_prefixes                    = var.my_ip_addresses
+  source_address_prefix                      = "Internet"
   source_port_range                          = "*"
   destination_application_security_group_ids = [azurerm_application_security_group.vault.id]
   destination_port_range                     = "443"
